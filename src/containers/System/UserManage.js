@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss'
 import { getAllUsers } from '../../services/userService';
@@ -22,6 +21,9 @@ class UserManage extends Component {
         }
     }
 
+    handlerAddNewUser = () => {
+        alert('click me');
+    }
 
     /**Life cyle
      * Run component:
@@ -35,6 +37,11 @@ class UserManage extends Component {
             <div className='users-container'>
                 <div className='title text-center'>
                     Manage Users
+                </div>
+                <div className='mx-1'>
+                    <button className='btn btn-primary px-3'
+                        onClick={() => this.handlerAddNewUser()}
+                    ><i className='fas fa-plus'></i> Add new users</button>
                 </div>
                 <div className='users-table mt-3 mx-1'>
                     <table id="customers">
