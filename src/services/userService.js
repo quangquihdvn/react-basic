@@ -7,4 +7,11 @@ const handlerLogin = (userEmail, userPassword) => {
     });
 }
 
-export { handlerLogin };
+const getAllUsers = (inputId) => {
+    return axios.get(`/api/get-all-users?id=${inputId}`);
+}
+
+export {
+    handlerLogin,
+    getAllUsers
+};
