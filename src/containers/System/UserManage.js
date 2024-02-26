@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './UserManage.scss'
-import { getAllUsers, createNewUserService, deleteUserService } from '../../services/userService';
+import { getAllUsers, createNewUserService, deleteUserService, updateUserService } from '../../services/userService';
 import ModalUser from './ModalUser';
-import {emitter} from "../../utils/emitter"
+import ModalEditUser from './ModalEditUser';
+import { emitter } from "../../utils/emitter"
 
 class UserManage extends Component {
 
@@ -11,7 +12,9 @@ class UserManage extends Component {
         super(props);
         this.state = {
             arrUsers: [],
-            isOpenModalUser: false
+            isOpenModalUser: false,
+            isOpenModalEditUser: false,
+            userEdit: {}
         }
     }
 
@@ -30,8 +33,41 @@ class UserManage extends Component {
 
     handlerAddNewUser = () => {
         this.setState({
-            isOpenModalUser: true
+            isOpenModalUser: true,
+
         })
+    }
+
+    handlerEditUser = (user) => {
+        this.setState({
+            isOpenModalEditUser: true,
+            userEdit: user
+        })
+    }
+
+    doEditUser = async (user) => {
+        try {
+            let response = await updateUserService({
+                id: user.id,
+                firstname: user.firstname,
+                lastname: user.lastname,
+                address: user.address
+            });
+
+            if (response && response.errCode !== 0) {
+                alert(response.message);
+            }
+            else {
+                await this.getAllUsers();
+                this.setState({
+                    isOpenModalEditUser: false,
+                });
+            }
+        }
+        catch (e) {
+            console.log(e);
+        }
+
     }
 
     toggleUserModal = () => {
@@ -40,16 +76,22 @@ class UserManage extends Component {
         });
     }
 
+    toggleEditUserModal = () => {
+        this.setState({
+            isOpenModalEditUser: !this.state.isOpenModalEditUser
+        });
+    }
+
     createNewUser = async (data) => {
-        try{
+        try {
             let response = await createNewUserService(data);
-            if(response && response.errCode != 0){
+            if (response && response.errCode !== 0) {
                 alert(response.message);
             }
-            else{
+            else {
                 await this.getAllUsers();
             }
-            
+
             this.setState({
                 isOpenModalUser: false,
             });
@@ -57,23 +99,23 @@ class UserManage extends Component {
             //fire event to modal
             emitter.emit("EVENT_CLEAR_MODAL_DATA");
         }
-        catch(e){
+        catch (e) {
             console.log(e);
         }
     }
 
     handlerDeleteUser = async (user) => {
-        try{
+        try {
             let res = await deleteUserService(user.id);
-            if(res && res.errCode != 0){
+            if (res && res.errCode !== 0) {
                 alert(res.message);
             }
-            else{
+            else {
                 await this.getAllUsers();
             }
-            
+
         }
-        catch(e){
+        catch (e) {
             console.log(e);
         }
     }
@@ -91,8 +133,16 @@ class UserManage extends Component {
                 <ModalUser
                     isOpen={this.state.isOpenModalUser}
                     toggleFromParent={this.toggleUserModal}
-                    createNewUser = {this.createNewUser}
+                    createNewUser={this.createNewUser}
                 />
+                {
+                    this.state.isOpenModalEditUser && <ModalEditUser
+                        isOpen={this.state.isOpenModalEditUser}
+                        toggleFromParent={this.toggleEditUserModal}
+                        currentUser={this.state.userEdit}
+                        editUser={this.doEditUser}
+                    />
+                }
                 <div className='title text-center'>
                     Manage Users
                 </div>
@@ -102,37 +152,37 @@ class UserManage extends Component {
                     ><i className='fas fa-plus'></i> Add new users</button>
                 </div>
                 <div className='users-table mt-3 mx-1'>
-                
+
                     <table id="customers">
-                    <tbody>
-                        <tr>
-                            <th>Email</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Address</th>
-                            <th>Actions</th>
-                        </tr>
-                    
-                        {
-                            arrUsers && arrUsers.map((item, index) => {
-                                return (
-                                    <tr>
-                                        <td>{item.email}</td>
-                                        <td>{item.firstName}</td>
-                                        <td>{item.lastName}</td>
-                                        <td>{item.address}</td>
-                                        <td>
-                                            <button className='btn-edit'><i className="fas fa-pencil-alt"></i></button>
-                                            <button className='btn-delete' onClick={() => this.handlerDeleteUser(item)}><i className="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
+                        <tbody>
+                            <tr>
+                                <th>Email</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Address</th>
+                                <th>Actions</th>
+                            </tr>
+
+                            {
+                                arrUsers && arrUsers.map((item, index) => {
+                                    return (
+                                        <tr>
+                                            <td>{item.email}</td>
+                                            <td>{item.firstName}</td>
+                                            <td>{item.lastName}</td>
+                                            <td>{item.address}</td>
+                                            <td>
+                                                <button className='btn-edit' onClick={() => this.handlerEditUser(item)}> <i className="fas fa-pencil-alt"></i></button>
+                                                <button className='btn-delete' onClick={() => this.handlerDeleteUser(item)}><i className="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
                     </table>
                 </div>
-            </div>
+            </div >
         );
     }
 
