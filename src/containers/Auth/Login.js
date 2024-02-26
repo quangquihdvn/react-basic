@@ -4,7 +4,6 @@ import { push } from "connected-react-router";
 
 import * as actions from "../../store/actions";
 import './Login.scss';
-import { FormattedMessage } from 'react-intl';
 import { handlerLogin } from '../../services/userService';
 
 class Login extends Component {
@@ -93,7 +92,7 @@ class Login extends Component {
                                 <span
                                     onClick={() => { this.handlerShowHidePassword() }}
                                 >
-                                    <i class={this.state.isShowPassword ? 'fas fa-eye' : 'fas fa-eye-slash'}></i>
+                                    <i className={this.state.isShowPassword ? 'fas fa-eye' : 'fas fa-eye-slash'}></i>
                                 </span>
 
                             </div>
