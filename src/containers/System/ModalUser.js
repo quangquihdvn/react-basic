@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {emitter} from '../../utils/emitter'
 
 class ModalUser extends Component {
 
@@ -13,6 +14,20 @@ class ModalUser extends Component {
             lastname: '',
             address: ''
         }
+
+        this.listenToEmitter();
+    }
+
+    listenToEmitter(){
+        emitter.on('EVENT_CLEAR_MODAL_DATA', () => {
+            this.setState({
+                email: '',
+                password: '',
+                firstname: '',
+                lastname: '',
+                address: ''
+            })
+        })
     }
 
     handlerOnChangeInput = (event, id) => {
