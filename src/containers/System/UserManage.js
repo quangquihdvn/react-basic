@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './UserManage.scss'
 import { getAllUsers } from '../../services/userService';
+import ModalUser from './ModalUser';
 
 class UserManage extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            arrUsers: []
+            arrUsers: [],
+            isOpenModalUser: false
         }
     }
 
@@ -22,7 +24,15 @@ class UserManage extends Component {
     }
 
     handlerAddNewUser = () => {
-        alert('click me');
+        this.setState({
+            isOpenModalUser: true
+        })
+    }
+
+    toggleUserModal = () => {
+        this.setState({
+            isOpenModalUser: !this.state.isOpenModalUser
+        });
     }
 
     /**Life cyle
@@ -35,6 +45,10 @@ class UserManage extends Component {
         let arrUsers = this.state.arrUsers;
         return (
             <div className='users-container'>
+                <ModalUser
+                    isOpen={this.state.isOpenModalUser}
+                    toggleFromParent={this.toggleUserModal}
+                />
                 <div className='title text-center'>
                     Manage Users
                 </div>
