@@ -1,4 +1,25 @@
 {
+    "home-header": {
+        "speciality": "Medical specialist",
+        "search-doctor": "Find doctors by specialty",
+        "health-facilities": "Health facilities",
+        "choose-hospital":"Choose a hospital or clinic",
+        "doctor": "Doctor",
+        "choose-doctor": "Choose a good doctor",
+        "examination-package": "Examination package",
+        "general-health-check": "General health check",
+        "support": "Support",
+        "medical-foundation": "MEDICAL FOUNDATION",
+        "comprehensive-health-care": "COMPREHENSIVE HEALTH CARE",
+        "find-medical-specialist": "Find a medical specialist",
+        "specialized-examination": "Specialized examination",
+        "remote-examination": "Remote examination",
+        "general-examination": "General examination",
+        "medical-tests": "Medical tests",
+        "mental-health": "Mental health",
+        "dental-examination": "Dental examination"
+
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
