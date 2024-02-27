@@ -114,13 +114,16 @@
         border: 1px solid green;
 
         .options{
-            width: 100px;
             text-align: center;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
 
             .option-child{
-                width: 100px;
+                width: 125px;
                 border: 1px solid red;
                 text-align: center;
+                padding: 5px ;
 
                 .icon-child{
                     background:white;
@@ -137,7 +140,13 @@
                 }
 
                 .text-child{
+                    font-size: 15px;
+                    font-weight: 500;
+                    cursor: pointer;
 
+                    &:hover{
+                        color: #49bce2;
+                    }
                 }
             }
         }
