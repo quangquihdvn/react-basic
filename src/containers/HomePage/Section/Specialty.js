@@ -4,7 +4,6 @@ import './Specialty.scss';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import specialtyImg from '../../../assets/specialty/co-xuong-khop.jpg'
 
 
 class Specialty extends Component {
@@ -14,17 +13,15 @@ class Specialty extends Component {
             dots: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 6,
+            slidesToShow: 4,
             slidesToScroll: 1,
-            //nextArrow: <SampleNextArrow />,
-            //prevArrow: <SamplePrevArrow />
         };
         return (
             <div className='section-specialty'>
                 <div className='specialty-container'>
                     <div className='specialty-header'>
-                        <span>Chuyên khoa phổ biến</span>
-                        <button>Xem thêm</button>
+                        <span className='title-section'>Chuyên khoa phổ biến</span>
+                        <button className='btn-section'>Xem thêm</button>
                     </div>
                     <div className='specialty-body'>
                         <Slider {...settings}>
