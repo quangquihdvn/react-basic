@@ -17,7 +17,8 @@
         "general-examination": "Khám tổng quát",
         "medical-tests": "Xét nghiệm y học",
         "mental-health": "Sức khỏe tinh thần",
-        "dental-examination": "Khám nha khoa"
+        "dental-examination": "Khám nha khoa",
+        "welcome": "Xin chào, "
     },
     "common": {
         "add": "Thêm",

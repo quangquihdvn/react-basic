@@ -17,8 +17,8 @@
         "general-examination": "General examination",
         "medical-tests": "Medical tests",
         "mental-health": "Mental health",
-        "dental-examination": "Dental examination"
-
+        "dental-examination": "Dental examination",
+        "welcome": "Welcome, "
     },
     "common": {
         "add": "Add",

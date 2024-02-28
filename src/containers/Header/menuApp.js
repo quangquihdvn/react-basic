@@ -1,6 +1,7 @@
 export const adminMenu = [
     { //hệ thống
-        name: 'menu.system.header', menus: [
+        name: 'menu.system.header',
+        menus: [
             {
                 name: 'menu.system.system-administrator.header',
                 subMenus: [
