@@ -1,26 +1,28 @@
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
+    isLoadingGender: false,
     genders: [],
     roles: [],
-    positions:[],
+    positions: [],
 }
 
 const adminReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_GENDER_START: 
-            console.log('gender start: ',action);
+        case actionTypes.FETCH_GENDER_START:
+            state.isLoadingGender = true;
             return {
                 ...state,
             }
-        case actionTypes.FETCH_GENDER_SUCCESS: 
-            let copyState = {...state};
-            copyState.genders = action.data;
+        case actionTypes.FETCH_GENDER_SUCCESS:
+            state.genders = action.data;
+            state.isLoadingGender = false;
             return {
-                ...copyState
+                ...state
             }
-        case actionTypes.FETCH_GENDER_FAIL: 
-            console.log('gender fail: ',action);
+        case actionTypes.FETCH_GENDER_FAIL:
+            state.isLoadingGender = false;
+            state.genders = [];
             return {
                 ...state,
             }
