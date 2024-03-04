@@ -9,7 +9,7 @@ export const adminMenu = [
                 name: 'menu.admin.crud-redux', link: '/system/user-redux'
             },
             {
-                name: 'menu.admin.manage-doctor', link: '/system/user-doctor'
+                name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
                 // name: 'menu.admin.manage-doctor',
                 // subMenus: [
                 //     { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
@@ -19,7 +19,7 @@ export const adminMenu = [
             {
                 name: 'menu.admin.manage-admin', link: '/system/user-admin'
             },
-            
+
         ]
     },
     { //Quản lý phòng khám
@@ -28,7 +28,7 @@ export const adminMenu = [
             {
                 name: 'menu.admin.manage-clinic', link: '/system/manage-clinic'
             }
-            
+
         ]
     },
     { //Quản lý chuyên khoa
@@ -37,7 +37,7 @@ export const adminMenu = [
             {
                 name: 'menu.admin.manage-specialty', link: '/system/manage-specialty'
             }
-            
+
         ]
     },
     { //Quản lý cẩm nang
@@ -46,7 +46,7 @@ export const adminMenu = [
             {
                 name: 'menu.admin.manage-handbook', link: '/system/manage-handbook'
             }
-            
+
         ]
     },
 ];
