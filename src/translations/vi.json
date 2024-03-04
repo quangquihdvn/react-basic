@@ -3,7 +3,7 @@
         "speciality": "Chuyên khoa",
         "search-doctor": "Tìm bác sĩ theo chuyên khoa",
         "health-facilities": "Cơ sở y tế",
-        "choose-hospital":"Chọn bệnh viện phòng khám",
+        "choose-hospital": "Chọn bệnh viện phòng khám",
         "doctor": "Bác sĩ",
         "choose-doctor": "Chọn bác sĩ giỏi",
         "examination-package": "Gói khám",
@@ -47,20 +47,23 @@
             "manage-handbook": "Quản lý cẩm nang"
         }
     },
-
-    "manage-user":{
+    "manage-user": {
         "add": "Thêm mới người dùng",
         "email": "Email",
-        "password":"Mật khẩu",
-        "first-name":"Tên",
+        "password": "Mật khẩu",
+        "first-name": "Tên",
         "last-name": "Họ",
         "phone-number": "Số điện thoại",
-        "address":"Địa chỉ",
+        "address": "Địa chỉ",
         "gender": "Giới tính",
-        "position":"Chức danh",
+        "position": "Chức danh",
         "role": "Vai trò",
-        "save":"Lưu user",
-        "edit":"Cập nhật",
-        "image":"Ảnh đại diện"
+        "save": "Lưu user",
+        "edit": "Cập nhật",
+        "image": "Ảnh đại diện"
+    },
+    "homepage": {
+        "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
+        "more-info": "Xem thêm"
     }
 }

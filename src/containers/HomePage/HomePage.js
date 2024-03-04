@@ -19,7 +19,7 @@ class HomePage extends Component {
 
         let settings = {
             dots: true,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
@@ -28,23 +28,23 @@ class HomePage extends Component {
         return (
             <div>
                 <HomeHeader />
-                <Specialty 
-                settings = {settings}
+                <Specialty
+                    settings={settings}
                 />
 
-                <Medicalfacility 
-                settings = {settings}/>
+                <Medicalfacility
+                    settings={settings} />
 
                 <OutStandingDoctor
-                settings = {settings}
+                    settings={settings}
                 />
 
                 <HandBook
-                settings = {settings}
+                    settings={settings}
                 />
 
-                <About/>
-                <HomeFooter/>
+                <About />
+                <HomeFooter />
             </div>
         );
     }

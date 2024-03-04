@@ -3,7 +3,7 @@
         "speciality": "Medical specialist",
         "search-doctor": "Find doctors by specialty",
         "health-facilities": "Health facilities",
-        "choose-hospital":"Choose a hospital or clinic",
+        "choose-hospital": "Choose a hospital or clinic",
         "doctor": "Doctor",
         "choose-doctor": "Choose a good doctor",
         "examination-package": "Examination package",
@@ -47,19 +47,23 @@
             "manage-handbook": "Manage handbooks"
         }
     },
-    "manage-user":{
+    "manage-user": {
         "add": "Add a new user",
         "email": "Email",
-        "password":"Password",
-        "first-name":"First name",
+        "password": "Password",
+        "first-name": "First name",
         "last-name": "Last name",
         "phone-number": "Phone number",
-        "address":"Address",
+        "address": "Address",
         "gender": "Gender",
-        "position":"Position",
+        "position": "Position",
         "role": "Role",
-        "save":"Save",
-        "edit":"Update",
-        "image":"Avatar"
+        "save": "Save",
+        "edit": "Update",
+        "image": "Avatar"
+    },
+    "homepage": {
+        "outstanding-doctor": "Outstanding doctor last week",
+        "more-info": "More info"
     }
 }
