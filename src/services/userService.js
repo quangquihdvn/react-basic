@@ -35,6 +35,14 @@ const getTopDoctorHomeService = (limit) => {
     return axios.get(`/api/top-doctor-home?limit=${limit}`);
 }
 
+const getAllDoctors = () => {
+    return axios.get("/api/get-all-doctors");
+}
+
+const saveDetailDoctor = (data) => {
+    return axios.post('/api/save-info-doctors', data);
+}
+
 export {
     handlerLogin,
     getAllUsers,
@@ -42,5 +50,7 @@ export {
     deleteUserService,
     updateUserService,
     getAllCodeService,
-    getTopDoctorHomeService
+    getTopDoctorHomeService,
+    getAllDoctors,
+    saveDetailDoctor
 };
