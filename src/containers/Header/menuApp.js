@@ -16,10 +16,17 @@ export const adminMenu = [
                 //     { name: 'menu.system.system-administrator.user-redux', link: '/system/user-redux' },
                 // ]
             },
+            // {
+            //     name: 'menu.admin.manage-admin', link: '/system/user-admin'
+            // },
             {
-                name: 'menu.admin.manage-admin', link: '/system/user-admin'
-            },
-
+                name: 'menu.doctor.manage-schedule',
+                menus: [
+                    {
+                        name: 'menu.doctor.schedule', link: '/system/user-manage'
+                    }
+                ]
+            }
         ]
     },
     { //Quản lý phòng khám
@@ -47,6 +54,17 @@ export const adminMenu = [
                 name: 'menu.admin.manage-handbook', link: '/system/manage-handbook'
             }
 
+        ]
+    },
+];
+
+export const doctorMenu = [
+    { //Quản lý kế hoạch khám bệnh của bác sĩ
+        name: 'menu.doctor.manage-schedule',
+        menus: [
+            {
+                name: 'menu.doctor.schedule', link: '/system/user-manage'
+            }
         ]
     },
 ];
